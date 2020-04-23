@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles/main.css"> 
+</head>
+<body>
+
+  <h1>Chat</h1>
+  <!-- Creo innput di tipo testo per mess con il tasto di invio -->
+  <div>
+    <input type="text" class='mess-input'>
+    <button class="mess-btn">Send</button>
+  </div>
+
+
+  <!-- creo una sezione dove verrà inserito il template clonato e poi popolato -->
+  <main class="chat"></main>
+
+
+
+
+<!-- creo id univoco con all'interno del type la funzione di handlebars -->
+  <script id="message-template" type="text/x-handlebars-template">
+    <!-- tutti gli elementi tra i "baffi" sono dinamici e verranno popolati con js -->
+    <div class="message  {{  user  }}">
+      <div class="testo">{{ text }}</div>
+      <div class="time"> {{ time }} </div>
+    </div>
+  </script>
+  
+
+
+
+
+
+
+
+
+
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script> 
+  <!-- Handlebars -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
+  <!-- link al file js finale -->
+  <script src="script/main.js"></script> 
+</body>
+</html>
