@@ -40,7 +40,7 @@ $.each(data,function( i ) {
   var html = compiled(data[i]);
   chat.append(html);
  
-// });
+});
 // data.forEach(function(element) {
 //   console.log(element);
   
