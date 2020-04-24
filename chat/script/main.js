@@ -2,6 +2,8 @@ $(document).ready(function() {   // inizio doc ready
 
 // refs
 
+
+
 // variabile che prende l'input del messaggio
 var input = $('.mess-input');
 
@@ -15,7 +17,44 @@ var chat = $('.chat');
 var source = $("#message-template").html();
 
 //compiliamo il template con il template stesso clonato da html
+var compiled = Handlebars.compile(source);
 var template = Handlebars.compile(source);
+
+
+
+var data = [
+  {
+    text: 'Caro',
+    time: '12:50',
+    user: 'sent'
+  },
+  {
+    text: 'Amico',
+    time: '12:58',
+    user: 'received'
+  },
+];
+$.each(data,function( i ) {
+ console.log(data[i]);
+ 
+  var html = compiled(data[i]);
+  chat.append(html);
+ 
+// });
+// data.forEach(function(element) {
+//   console.log(element);
+  
+//    var html = compiled(element);
+//    chat.append(html);
+  
+//  });
+ 
+
+
+
+
+
+
 
 //Inseriamo un nuovo messaggio al click
 button.click(function(){
